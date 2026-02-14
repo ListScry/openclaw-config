@@ -1,0 +1,8 @@
+// CI-safe config: loopback-only, token auth, external channels disabled.
+{
+  $include: [
+    "./parts/gateway.ci.json5",
+    "./parts/agents.ci.json5",
+    "./parts/channels.disabled.json5",
+  ],
+}

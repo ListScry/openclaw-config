@@ -1,0 +1,18 @@
+// Safe-to-commit local config entrypoint.
+//
+// Secrets MUST NOT be committed:
+// - Preferred: put them in $OPENCLAW_STATE_DIR/.env (auto-loaded by OpenClaw)
+// - Optional: add a gitignored include file under ./secrets/ (see below)
+{
+  $include: [
+    "./parts/gateway.json5",
+    "./parts/agents.json5",
+    "./parts/channels.disabled.json5",
+    "./parts/cron.json5",
+    "./parts/browser.json5",
+    "./parts/monitoring.json5",
+
+    // Optional secrets include (gitignored). Keep the file empty `{}` if unused.
+    // "./secrets/secrets.local.json5",
+  ],
+}

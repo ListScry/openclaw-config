@@ -1,0 +1,17 @@
+{
+  agents: {
+    defaults: {
+      // Keep workspaces isolated under the active state dir.
+      workspace: "${OPENCLAW_STATE_DIR}/workspace",
+
+      // Model ids are not secrets. Provider credentials are secrets and must
+      // live in auth-profiles/runtime env (not committed).
+      models: {
+        "openai-codex/gpt-5.3-codex": { alias: "codex" },
+      },
+      model: {
+        primary: "openai-codex/gpt-5.3-codex",
+      },
+    },
+  },
+}

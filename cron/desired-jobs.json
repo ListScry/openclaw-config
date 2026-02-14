@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "name": "keepalive-websites-every-8m",
+      "description": "Keep browser sessions warm for monitoring sites.",
+      "enabled": true,
+      "schedule": { "kind": "every", "every": "8m" },
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "systemEvent": "keepalive: websites"
+      },
+      "wakeMode": "now"
+    }
+  ]
+}

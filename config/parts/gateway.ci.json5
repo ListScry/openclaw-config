@@ -1,0 +1,12 @@
+{
+  gateway: {
+    mode: "local",
+    bind: "loopback",
+    auth: {
+      mode: "token",
+      token: "${OPENCLAW_GATEWAY_TOKEN}",
+    },
+    tailscale: { mode: "off" },
+    controlUi: { enabled: false },
+  },
+}

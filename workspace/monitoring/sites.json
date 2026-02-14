@@ -1,0 +1,50 @@
+{
+  "intervalMinutes": 8,
+  "sites": [
+    {
+      "name": "Monarch",
+      "url": "https://app.monarch.com/dashboard",
+      "kind": "browser",
+      "profile": "openclaw",
+      "keepAliveAction": {
+        "type": "click",
+        "note": "Click a harmless nav item on the dashboard to keep the session warm.",
+        "selectorHint": "e.g. click the left-nav 'Accounts' icon"
+      },
+      "loggedOutHeuristics": [
+        {"type": "text", "value": "Sign In"},
+        {"type": "url_contains", "value": "/login"}
+      ]
+    },
+    {
+      "name": "Paymentus (Marin Water)",
+      "url": "https://ipn4.paymentus.com/cp/mwdc",
+      "kind": "browser",
+      "profile": "openclaw",
+      "keepAliveAction": {
+        "type": "click",
+        "note": "Payment portals often expire sessions regardless; we can try opening Accounts and doing a no-op navigation.",
+        "selectorHint": "e.g. click 'Accounts' in the sidebar if logged in"
+      },
+      "loggedOutHeuristics": [
+        {"type": "text", "value": "Session Timeout"},
+        {"type": "text", "value": "Login"}
+      ]
+    },
+    {
+      "name": "PG&E",
+      "url": "https://myaccount.pge.com/myaccount/s/",
+      "kind": "browser",
+      "profile": "openclaw",
+      "keepAliveAction": {
+        "type": "click",
+        "note": "If logged in, click a benign header/menu item; otherwise just load homepage.",
+        "selectorHint": "e.g. click 'Sign In' then back (no credentials) OR click 'Outages'"
+      },
+      "loggedOutHeuristics": [
+        {"type": "text", "value": "Sign In"},
+        {"type": "text", "value": "System Maintenance"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Local-only secrets (never commit)
+config/secrets/secrets.local.*
+**/.env
+
+# Runtime state (never commit)
+**/keepalive_state.json
+credentials/
+agents/
+**/sessions/
+extensions/
+sandboxes/
+cron/jobs.json
+
+# OS/editor
+.DS_Store
