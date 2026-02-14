@@ -28,6 +28,12 @@ Docker smoke test (requires Docker):
 ./scripts/test_docker.sh
 ```
 
+Daily GitHub sync (safe files only):
+
+```bash
+./scripts/daily_sync.sh
+```
+
 ## Secrets
 
 Do not commit secrets.
